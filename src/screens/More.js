@@ -8,7 +8,7 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
-import colors from '../dictionary/colors';
+import colors from '../../dictionary/colors';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 30 : StatusBarManager.HEIGHT;

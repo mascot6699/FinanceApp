@@ -8,7 +8,7 @@ import {
   NativeModules,
   Platform,
 } from 'react-native';
-import data from '../notiData';
+import data from '../../db/notiData';
 
 // const SCREEN_HEIGHT = Dimensions.get('window').height;
 const {StatusBarManager} = NativeModules;
@@ -102,9 +102,9 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'flex-start',
     justifyContent: 'center',
-    paddingTop: STATUSBAR_HEIGHT +20,
+    paddingTop: STATUSBAR_HEIGHT + 30,
     backgroundColor: '#060D4A',
-    paddingBottom: 20,
+    paddingBottom: 10,
   },
 });
 

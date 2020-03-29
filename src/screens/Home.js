@@ -9,9 +9,9 @@ import {
   FlatList,
   StatusBar
 } from 'react-native';
-import {imagePaths} from '../dictionary/path';
-import data from '../data';
-import FullHeightButton from '../components/FullHeightButton';
+import {imagePaths} from '../../dictionary/path';
+import data from '../../db/data';
+import FullHeightButton from '../../components/FullHeightButton';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import SafeAreaView from 'react-native-safe-area-view';
 

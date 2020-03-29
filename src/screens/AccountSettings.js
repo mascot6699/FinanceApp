@@ -14,9 +14,9 @@ import {
   ScrollView
 } from 'react-native';
 // import CustomTextInput from '../components/CustomTextInput';
-import {CustomButton} from '../components/CustomButton';
+import {CustomButton} from '../../components/CustomButton';
 import {KeyboardAvoidingView} from 'react-native';
-import {ImageChangeButton} from '../components/ImageChangeButton';
+import {ImageChangeButton} from '../../components/ImageChangeButton';
 // import ImagePicker from 'react-native-image-picker';
 // import AsyncStorage from '@react-native-community/async-storage';
 import {Formik} from 'formik';

@@ -23,10 +23,10 @@ import {Confirmation} from '../screens/Confirmation';
 import {Denemee} from '../screens/Denemee';
 import {Watchlist} from '../screens/Watchlist';
 // import {AuthContext} from './context';
-import {Login} from '../Login';
-import {Signup} from '../Signup';
-import BackButton from '../components/BackButton';
-import MoreButtonIcon from '../components/MoreButtonIcon';
+import {Login} from '../screens/Login';
+import {Signup} from '../screens/Signup';
+import BackButton from '../../components/BackButton';
+import MoreButtonIcon from '../../components/MoreButtonIcon';
 
 // screens
 export const MyContext = React.createContext();

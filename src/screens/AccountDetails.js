@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Platform, NativeModules, Image, TouchableOpacity, FlatList} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import CustomLine from '../components/CustomLine';
-import CustomTab from '../components/CustomTab';
-import Data from '../JsonData/dataAccount';
+import CustomLine from '../../components/CustomLine';
+import CustomTab from '../../components/CustomTab';
+import Data from '../../db/dataAccount';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 30 : StatusBarManager.HEIGHT;

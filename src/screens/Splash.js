@@ -7,8 +7,8 @@ import {
   Image,
   Text,
 } from 'react-native';
-import {imagePaths} from '../dictionary/path';
-import Logo from '../components/Logo';
+import {imagePaths} from '../../dictionary/path';
+import Logo from '../../components/Logo';
 
 export class Splash extends Component {
   render() {

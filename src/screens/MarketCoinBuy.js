@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, NativeModules, Platform,Image, Alert, TouchableOpacity} from 'react-native';
-import CustomTextInput from '../components/CustomTextInput';
-import {CustomButton} from '../components/CustomButton';
+import CustomTextInput from '../../components/CustomTextInput';
+import {CustomButton} from '../../components/CustomButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import DropdownUp from '../components/DrowdownUp';
+import DropdownUp from '../../components/DrowdownUp';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 30 : StatusBarManager.HEIGHT;

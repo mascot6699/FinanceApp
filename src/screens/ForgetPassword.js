@@ -10,7 +10,7 @@ import {
   StatusBar
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {CustomButton} from '../components/CustomButton';
+import {CustomButton} from '../../components/CustomButton';
 import ModalDropdown from 'react-native-modal-dropdown';
 
 

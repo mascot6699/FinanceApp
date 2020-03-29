@@ -9,8 +9,8 @@ import {
   StatusBar
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {PhoneButton} from '../components/PhoneButton';
-import Confirm from '../components/Confirm';
+import {PhoneButton} from '../../components/PhoneButton';
+import Confirm from '../../components/Confirm';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const {StatusBarManager} = NativeModules;

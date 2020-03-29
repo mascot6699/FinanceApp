@@ -10,11 +10,11 @@ import {
   TextInput,TouchableOpacity,
   Switch,
 } from 'react-native';
-import {imagePaths} from './dictionary/path';
-import Logo from './components/Logo';
-import {CustomButton} from './components/CustomButton';
+import {imagePaths} from '../../dictionary/path';
+import Logo from '../../components/Logo';
+import {CustomButton} from '../../components/CustomButton';
 import {KeyboardAvoidingView} from 'react-native';
-import {SignupBottomButton} from './components/SignupBottomButon';
+import {SignupBottomButton} from '../../components/SignupBottomButon';
 import {Formik} from 'formik';
 import * as yup from 'yup';
 // import AuthContext from './context';
@@ -136,10 +136,10 @@ export class Signup2 extends React.Component {
               <React.Fragment>
               <View style={{marginBottom:-15}}>
                 <StyledInput formikProps={formikProps} formikKey="username" autoCapitalize="none" />
-                  <Image style={{marginHorizontal: 25,top: -50,position: 'relative'}} source={require('./assets/img/userout.png')}></Image>
+                  <Image style={{marginHorizontal: 25,top: -50,position: 'relative'}} source={require('../assets/img/userout.png')}></Image>
                   <Text style={styles.legend}>Firstname Lastname</Text>
                   <View style={{alignItems: 'flex-end',marginBottom:-10}}>
-                    <Image style={{marginHorizontal: 20,top: -65,position: 'relative',}} source={require('./assets/img/unlem.png')}></Image>
+                    <Image style={{marginHorizontal: 20,top: -65,position: 'relative',}} source={require('../assets/img/unlem.png')}></Image>
                   </View>
               </View>
 
@@ -147,7 +147,7 @@ export class Signup2 extends React.Component {
                 <StyledInput formikProps={formikProps} formikKey="email" autoCapitalize="none"/>
                 <Image
                   style={{marginHorizontal: 25, top: -48, position: 'relative'}}
-                  source={require('./assets/img/mailout.png')}></Image>
+                  source={require('../assets/img/mailout.png')}></Image>
                 <Text style={styles.legend}>Email</Text>
               </View>
 
@@ -155,11 +155,11 @@ export class Signup2 extends React.Component {
                 <StyledInput formikProps={formikProps} autoCapitalize="none" formikKey="password" />
                 <View style={styles.textBoxContainer}>
                   <TouchableOpacity activeOpacity={0.8} style={styles.touachableButton} onPress={this.setPasswordVisibility}>
-                  <Image source={this.state.hidePassword? require('./assets/img/eye-off.png'): require('./assets/img/eyeopen.png')} style={styles.buttonImage}/>
-                  <Image style={{marginHorizontal: 0,top: -18,position: 'relative'}} source={require('./assets/img/unlem.png')}></Image>
+                  <Image source={this.state.hidePassword? require('../assets/img/eye-off.png'): require('../assets/img/eyeopen.png')} style={styles.buttonImage}/>
+                  <Image style={{marginHorizontal: 0,top: -18,position: 'relative'}} source={require('../assets/img/unlem.png')}></Image>
                   </TouchableOpacity>
                 </View>
-                <Image style={{marginHorizontal: 25, top: -52, position: 'relative'}} source={require('./assets/img/lockout.png')}></Image>
+                <Image style={{marginHorizontal: 25, top: -52, position: 'relative'}} source={require('../assets/img/lockout.png')}></Image>
                 <Text style={styles.legend}>Password</Text>
               </View>
 

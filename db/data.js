@@ -1,7 +1,7 @@
 export default [
   {
     id: '0',
-    value: require('./assets/img/hsbc.png'),
+    value: require('../src/assets/img/hsbc.png'),
     title: 'HSBC',
     titleDescription: 'Euro Account',
     price: '€2,020',
@@ -9,7 +9,7 @@ export default [
   },
   {
     id: '1',
-    value: require('./assets/img/credit.png'),
+    value: require('../src/assets/img/credit.png'),
     title: 'Credit Suisse',
     titleDescription: 'USD Custody',
     price: '$1,340',
@@ -17,7 +17,7 @@ export default [
   },
   {
     id: '2',
-    value: require('./assets/img/bnb.png'),
+    value: require('../src/assets/img/bnb.png'),
     title: 'UBS',
     titleDescription: 'CHF Account',
     price: 'CHF 1,471',
@@ -25,7 +25,7 @@ export default [
   },
   {
     id: '3',
-    value: require('./assets/img/btc.png'),
+    value: require('../src/assets/img/btc.png'),
     title: 'BTC',
     titleDescription: 'Bitcoin Wallet',
     price: 'Ƀ0,093',
@@ -33,7 +33,7 @@ export default [
   },
   {
     id: '4',
-    value: require('./assets/img/ltc.png'),
+    value: require('../src/assets/img/ltc.png'),
     title: 'LTC',
     titleDescription: 'Litecoin Wallet',
     price: 'Ł0,014',
@@ -41,7 +41,7 @@ export default [
   },
   {
     id: '5',
-    value: require('./assets/img/bch.png'),
+    value: require('../src/assets/img/bch.png'),
     title: 'BCH',
     titleDescription: 'Bitcion Cash Wallet',
     price: 'Ƀ0,131',
@@ -49,7 +49,7 @@ export default [
   },
   {
     id: '6',
-    value: require('./assets/img/hsbc.png'),
+    value: require('../src/assets/img/hsbc.png'),
     title: 'HSBC',
     titleDescription: 'Euro Account',
     price: '€2,020',
@@ -57,7 +57,7 @@ export default [
   },
   {
     id: '7',
-    value: require('./assets/img/credit.png'),
+    value: require('../src/assets/img/credit.png'),
     title: 'Credit Suisse',
     titleDescription: 'USD Custody',
     price: '$1,340',
@@ -65,7 +65,7 @@ export default [
   },
   {
     id: '8',
-    value: require('./assets/img/bnb.png'),
+    value: require('../src/assets/img/bnb.png'),
     title: 'UBS',
     titleDescription: 'CHF Account',
     price: 'CHF 1,471',
@@ -73,7 +73,7 @@ export default [
   },
   {
     id: '9',
-    value: require('./assets/img/btc.png'),
+    value: require('../src/assets/img/btc.png'),
     title: 'BTC',
     titleDescription: 'Bitcoin Wallet',
     price: 'Ƀ0,093',
@@ -81,7 +81,7 @@ export default [
   },
   {
     id: '10',
-    value: require('./assets/img/ltc.png'),
+    value: require('../src/assets/img/ltc.png'),
     title: 'LTC',
     titleDescription: 'Litecoin Wallet',
     price: 'Ł0,014',
@@ -89,7 +89,7 @@ export default [
   },
   {
     id: '11',
-    value: require('./assets/img/bch.png'),
+    value: require('../src/assets/img/bch.png'),
     title: 'BCH',
     titleDescription: 'Bitcion Cash Wallet',
     price: 'Ƀ0,131',

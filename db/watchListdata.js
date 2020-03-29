@@ -1,7 +1,7 @@
 export default [
     {
       id: '0',
-      value: require('../assets/img/amazon.png'),
+      value: require('../src/assets/img/amazon.png'),
       title: 'Amazon',
       titleDescription: 'NASDAQ',
       clock: '17:03:37',
@@ -10,7 +10,7 @@ export default [
     },
     {
       id: '1',
-      value: require('../assets/img/microsoft.png'),
+      value: require('../src/assets/img/microsoft.png'),
       title: 'Microsoft',
       titleDescription: 'NASDAQ',
       clock: '17:03:37',
@@ -19,7 +19,7 @@ export default [
     }, 
     {
       id: '2',
-      value: require('../assets/img/autodesk.png'),
+      value: require('../src/assets/img/autodesk.png'),
       title: 'Autodesk',
       titleDescription: 'NASDAQ',
       clock: '17:03:37',
@@ -28,7 +28,7 @@ export default [
     }, 
     {
       id: '3',
-      value: require('../assets/img/cimarex.png'),
+      value: require('../src/assets/img/cimarex.png'),
       title: 'Cimarex Energy',
       titleDescription: 'NYSE',
       clock: '17:03:37',

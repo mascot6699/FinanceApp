@@ -1,18 +1,7 @@
 import React, {Component} from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  FlatList,
-  Image,
-  NativeModules,
-  Platform,
-  TouchableOpacity
-} from 'react-native';
-
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import CustomTextInput from '../components/CustomTextInput';
-import wData from '../wData';
+import {Text, View, StyleSheet, FlatList, Image, NativeModules, Platform, TouchableOpacity} from 'react-native';
+import CustomTextInput from '../../components/CustomTextInput';
+import wData from '../../db/wData';
 import Icon from 'react-native-vector-icons/FontAwesome';
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 25 : StatusBarManager.HEIGHT;

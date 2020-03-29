@@ -2,10 +2,8 @@ import React, {Component} from 'react'
 import { View, Text, StyleSheet, Image, NativeModules, Platform} from 'react-native';
 import {Grid, LineChart, XAxis, YAxis} from 'react-native-svg-charts';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import DropdownUp from '../components/DrowdownUp';
+import DropdownUp from '../../components/DrowdownUp';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Area from '../src/Area';
-
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 30 : StatusBarManager.HEIGHT;

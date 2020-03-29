@@ -11,13 +11,16 @@ import {
   Switch,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import fsManager from '../../fs-manager';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBarManager.HEIGHT;
 
 export class Settings extends Component {
 
-  state = {switchValue:false}
+  state = {
+    switchValue:false, 
+  }
   toggleSwitch = (value) => {
       this.setState({switchValue: value})
    }
@@ -45,7 +48,18 @@ export class Settings extends Component {
     };
   }
 
+  async componentWillMount(){
+ 
+    let profile = await fsManager.getUser()
+    profile = JSON.parse(profile)
+    this.setState({
+      userDisplayName: profile.username //  profile.name + ' ' + profile.lastname
+    })
+  }
+
   render() {
+    const { userDisplayName } = this.state
+
     return (
       <View style={styles.container}>
         <View style={styles.generalTop}>
@@ -71,7 +85,7 @@ export class Settings extends Component {
             <View style={styles.portfolioLeft}>
               <Image source={require('../assets/img/Resim.png')}></Image>
               <View style={{marginHorizontal: 20, marginTop: 10}}>
-                <Text style={{fontWeight: 'bold'}}>Stella French</Text>
+                <Text style={{fontWeight: 'bold',color:'black'}}>{userDisplayName}</Text>
               </View>
             </View>
 
@@ -152,7 +166,7 @@ export class Settings extends Component {
               <View style={styles.Bottomcizgi}></View>
 
               <View style={{marginVertical:30,flexDirection:'row'}}>
-                  <TouchableOpacity onPress={() => this.props.navigation.navigate('More')} >
+                  <TouchableOpacity onPress={() => this._logout() } >
                    <Image source={require('../assets/img/Logout.png')} />
                    <View style={{marginTop:-20,marginHorizontal:35}}>
                    <Text style={styles.logout}>Logout</Text>
@@ -168,6 +182,11 @@ export class Settings extends Component {
         </View>
       </View>
     );
+  }
+
+  _logout = () => {
+    fsManager.logout();
+    this.props.navigation.navigate('Login')
   }
 }
 

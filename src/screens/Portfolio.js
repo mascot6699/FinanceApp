@@ -8,13 +8,13 @@ import {
   Platform,
   NativeModules,
 } from 'react-native';
-import data from '../JsonData/watchListdata';
+import data from '../../db/watchListdata';
 // import Dropdown from '../components/Dropdown';
-import DropdownUp from '../components/DrowdownUp';
+import DropdownUp from '../../components/DrowdownUp';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import colors from '../dictionary/colors';
+import colors from '../../dictionary/colors';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import MoreButtonIcon from '../components/MoreButtonIcon';
+import MoreButtonIcon from '../../components/MoreButtonIcon';
 
 const {StatusBarManager} = NativeModules;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 25 : StatusBarManager.HEIGHT;
@@ -24,7 +24,12 @@ export class Portfolio extends Component {
   renderContacksItem = ({item, index}) => {
     return (
       <View style={styles.itemContainer}>
-      <View style={{borderTopLeftRadius:8,borderTopRightRadius:8,marginTop:-5}}></View>
+        <View
+          style={{
+            borderTopLeftRadius: 8,
+            borderTopRightRadius: 8,
+            marginTop: -5,
+          }}></View>
         <Image style={styles.avatar} source={item.value} />
         <View style={styles.textContainer}>
           <Text style={styles.title}>{item.title}</Text>
@@ -50,43 +55,44 @@ export class Portfolio extends Component {
   render() {
     return (
       <View style={styles.container}>
-       <View style={{flex:1}}>
-       <View style={{flex:1}}>
-       <View style={styles.generalTop}>
-       <View style={styles.headerLeft}>
-         <Icon
-           style={{}}
-           onPress={() => this.props.navigation.navigate('More')}
-           name="angle-left"
-           size={18}
-           color={'white'}
-         />
-       </View>
-       <View style={styles.headerCenter}>
-         <Text style={{color: '#FFFFFF', fontWeight: '600', fontSize: 16}}>
-           Watchlist
-         </Text>
-       </View>
-       <View style={styles.heaederRights}>
-         <MoreButtonIcon />
-       </View>
-     </View>
-     <FlatList
-       data={data}
-       renderItem={this.renderContacksItem}
-       keyExtractor={item => item.id}
-     />
-       </View>
-       
-        
-       <View style={{alignItems:'flex-end',justifyContent:'center'}}>
-       <TouchableOpacity
-       onPress={() => this.props.navigation.navigate('HomeDetail')}
-       >
-       <Image style={{marginTop:100}} source={require('../assets/img/Primary.png')}></Image>
-     </TouchableOpacity>
-     </View>
-       </View>
+        <View style={{flex: 1}}>
+          <View style={{flex: 1}}>
+            <View style={styles.generalTop}>
+              <View style={styles.headerLeft}>
+                <Icon
+                  style={{}}
+                  onPress={() => this.props.navigation.navigate('More')}
+                  name="angle-left"
+                  size={18}
+                  color={'white'}
+                />
+              </View>
+              <View style={styles.headerCenter}>
+                <Text
+                  style={{color: '#FFFFFF', fontWeight: '600', fontSize: 16}}>
+                  Watchlist
+                </Text>
+              </View>
+              <View style={styles.heaederRights}>
+                <MoreButtonIcon />
+              </View>
+            </View>
+            <FlatList
+              data={data}
+              renderItem={this.renderContacksItem}
+              keyExtractor={item => item.id}
+            />
+          </View>
+
+          <View style={{alignItems: 'flex-end', justifyContent: 'center'}}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('HomeDetail')}>
+              <Image
+                style={{marginTop: 100}}
+                source={require('../assets/img/Primary.png')}></Image>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
     );
   }

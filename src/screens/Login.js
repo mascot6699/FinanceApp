@@ -1,23 +1,22 @@
 import React from 'react';
 // import axios from 'axios';
 import {View,StyleSheet,ImageBackground,Dimensions,Image,Text,StatusBar,TouchableOpacity,TextInput} from 'react-native';
-import {imagePaths} from './dictionary/path';
-import Logo from './components/Logo';
-import CustomTextInput from './components/CustomTextInput';
-import {CustomButton} from './components/CustomButton';
+import {imagePaths} from '../../dictionary/path';
+import Logo from '../../components/Logo';
+import CustomTextInput from '../../components/CustomTextInput';
+import {CustomButton} from '../../components/CustomButton';
 import {KeyboardAvoidingView} from 'react-native';
-import {LoginBottomButon} from './components/LoginBottomButon';
+import {LoginBottomButon} from '../../components/LoginBottomButon';
 import AsyncStorage from '@react-native-community/async-storage';
-
+import fsManager from '../../fs-manager'
 // import AuthContext from './context';
 // export const MyContext = React.createContext();
 // export const MyContext = React.createContext();
 
 export class Login extends React.Component {
   state = {
-    username: 'okan',
-    password: 'sadfsfa',
-    token: '',
+    username: '',
+    password: '',
   };
 
   constructor(props) {
@@ -30,29 +29,45 @@ export class Login extends React.Component {
     this.setState({hidePassword: !this.state.hidePassword});
   };
 
-  onLogoff = async () => {
-    try {
-      this.setState({token: "" });
-      // await AsyncStorage.removeItem('token')
-      await AsyncStorage.clear();
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // onLogoff = async () => {
+  //   try {
+  //     this.setState({token: "" });
+  //     // await AsyncStorage.removeItem('token')
+  //     await AsyncStorage.clear();
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
-  onSubmit = async () => {
-    try {
-      await this.setState({token: 'abc123'});
-      // await AsyncStorage.setItem('username', this.state.username);
-      // await AsyncStorage.setItem('token', 'abc123');
-      // await AsyncStorage.multiSet([
-      //   ['username', this.state.username],
-      //   ['token', 'abc123'],
-      // ]);
-      await AsyncStorage.setItem('userprofile', JSON.stringify({ username: this.state.username, token: this.state.token }))
-    } catch (err) {
-      console.log(err);
+  onSubmit = async () => { 
+
+    const { username, password } = this.state
+    const { navigation } = this.props
+
+    if(username === undefined || username === 'undefined' || username === ''){
+      alert("Username alert");
+    } else {
+      // sen email and password to api
+      // response okay success login or not..
+      // fetch('www.financeapp.com/api/login', { username: this.state.username, password: this.state.password }, function(result)=> {})
+      
+      // simulating success login.
+      var profleData = {
+        username: username,
+        name: 'Okan',
+        lastname: 'Kaya',
+        email: 'jsdfas',
+        profilePictureUrl: '',
+        avatarUrl : 'jsdjkfdsksdkfsdf.jph', 
+      }; 
+      const isSuccess = await fsManager.saveUser(JSON.stringify(profleData))
+      if(isSuccess){
+        this.props.navigation.navigate("Home");
+      } else{
+        alert("FS error");
+      } 
     }
+      
   };
 
   getData = async () => {
@@ -161,7 +176,7 @@ export class Login extends React.Component {
             style={styles.input}
             // onSubmitEditing= {() => this.Login(this.state.email, this.state.password)}
           ></CustomTextInput>
-          <Image style={{marginHorizontal: 20, top: -33, position: 'relative'}} source={require('./assets/img/mail-line.png')}></Image>
+          <Image style={{marginHorizontal: 20, top: -33, position: 'relative'}} source={require('../assets/img/mail-line.png')}></Image>
 
           <View style={styles.textBoxContainer}>
             <TextInput
@@ -182,8 +197,8 @@ export class Login extends React.Component {
               <Image
                 source={
                   this.state.hidePassword
-                    ? require('./assets/img/eye-off.png')
-                    : require('./assets/img/eyeopen.png')
+                    ? require('../assets/img/eye-off.png')
+                    : require('../assets/img/eyeopen.png')
                 }
                 style={styles.buttonImage}
               />
@@ -192,10 +207,10 @@ export class Login extends React.Component {
           <Image
             
             style={{marginHorizontal: 22, top: -40, position: 'relative'}}
-            source={require('./assets/img/lock-line.png')}></Image>
+            source={require('../assets/img/lock-line.png')}></Image>
 
 
-            <CustomButton title={'Login'} onPress={() => navigate('Home')} />
+            <CustomButton title={'Login'} onPress={() => this.onSubmit('Home')} />
         
 
           <View style={{flex: 0.6, flexDirection: 'row'}}>
@@ -239,22 +254,6 @@ export class Login extends React.Component {
   }
 }
 const styles = StyleSheet.create({
-  loginBtn: {
-    width: '100%',
-    height: 50,
-    borderRadius: 5,
-    backgroundColor: '#071056',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginVertical: 5,
-  },
-  headerText: {
-    fontSize: 25,
-    textAlign: 'center',
-    margin: 10,
-    color: 'black',
-    fontWeight: 'bold',
-  },
   textBoxContainer: {
     alignItems: 'flex-end',
   },

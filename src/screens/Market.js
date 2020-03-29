@@ -10,8 +10,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 import {PieChart} from 'react-native-svg-charts';
-import CustomTextInput from '../components/CustomTextInput';
-import Data from '../data';
+import CustomTextInput from '../../components/CustomTextInput';
+import Data from '../../db/data';
 import ActionButton from 'react-native-action-button';
 // import Ex from '../components/ex';
 import { Tab, Tabs, TabHeading } from 'native-base';
@@ -180,9 +180,9 @@ _onPressOut = () => {
     const deviceWidth = Dimensions.get('window').width;
 
     return (
-      <View style={{flex: 1,backgroundColor:'white',opacity: this.state.opacity}}>
-        <View style={{flexDirection: 'column', flex: 1,backgroundColor:'white',opacity: this.state.opacity}}>
-          <View style={{justifyContent: 'center', flex: 0.5,backgroundColor:'white',opacity: this.state.opacity}}>
+      <View style={{flex: 1,backgroundColor:'white',}}>
+        <View style={{flexDirection: 'column', flex: 1,backgroundColor:'white',}}>
+          <View style={{justifyContent: 'center', flex: 0.5,backgroundColor:'white',}}>
             <PieChart
               style={{height: 180}}
               outerRadius={'80%'}
@@ -371,7 +371,7 @@ _onPressOut = () => {
             spacing={25}
             type="tab"
             offsetX={35}
-            offsetY={5}
+            offsetY={35}
             onPress={() => this.setState({opacity: !this.state.opacity? 0.7 : 1}) }
             size={40}
             buttonColor="#FD7028"

@@ -6,14 +6,14 @@ import {
   Dimensions,
   Image,
 } from 'react-native';
-import {imagePaths} from './dictionary/path';
-import Logo from './components/Logo';
-import CustomTextInput from './components/CustomTextInput';
-import {CustomButton} from './components/CustomButton';
+import {imagePaths} from '../../dictionary/path';
+import Logo from '../../components/Logo';
+import CustomTextInput from '../../components/CustomTextInput';
+import {CustomButton} from '../../components/CustomButton';
 import {KeyboardAvoidingView} from 'react-native';
-import {SignupBottomButton} from './components/SignupBottomButon';
+import {SignupBottomButton} from '../../components/SignupBottomButon';
 // import AuthContext from './context';
-import { AuthContext } from './context';
+import { AuthContext } from '../../dictionary/context';
 
 
 
@@ -46,7 +46,7 @@ export class Signup extends Component {
             onSubmit={() => this.namesurname.focus()}></CustomTextInput>
           <Image
             style={{marginHorizontal: 20, top: -35, position: 'relative'}}
-            source={require('./assets/img/user.png')}></Image>
+            source={require('../assets/img/user.png')}></Image>
           <CustomTextInput
             autoCapitalize={'none'}
             placeholder={'Email'}
@@ -57,7 +57,7 @@ export class Signup extends Component {
             onSubmit={() => this.email.focus()}></CustomTextInput>
           <Image
             style={{marginHorizontal: 20, top: -33, position: 'relative'}}
-            source={require('./assets/img/mail-line.png')}></Image>
+            source={require('../assets/img/mail-line.png')}></Image>
           <CustomTextInput
             style={styles.input}
             autoCapitalize={'none'}
@@ -69,7 +69,7 @@ export class Signup extends Component {
             inputType={'password'}></CustomTextInput>
           <Image
             style={{marginHorizontal: 20, top: -35, position: 'relative'}}
-            source={require('./assets/img/lock-line.png')}></Image>
+            source={require('../assets/img/lock-line.png')}></Image>
           <CustomButton title={'Sign Up'} onPress={() => navigate('Login')}  />
 
           <View
